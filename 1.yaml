@@ -1,0 +1,182 @@
+# NAME: KK机场-全节点手动直达版
+# 更新日期: 2026-04-18
+# 设计逻辑：主入口包含全量节点 + 地区自动组置后
+
+# ================= 基础设置 =================
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 8.8.8.8
+    - 1.1.1.1
+
+# ================= 节点列表 =================
+proxies:
+  - {name: 🇭🇰 IEPL-香港1, server: junp.kuaileiduanko.com, port: 36091, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "ZDc2YTMxZTgwMGFmNjhlMg==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇭🇰 IEPL-香港2, server: 6688.rkkuailei.cc, port: 36092, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "ZDc2YTMxZTgwMGFmNjhlMg==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇭🇰 IEPL-香港3, server: 6688.rkkuailei.cc, port: 36093, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "ZDc2YTMxZTgwMGFmNjhlMg==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇭🇰 IEPL-香港动态家宽, server: junp.kuaileiduanko.com, port: 36123, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇯🇵 IEPL-日本1, server: junp.kuaileiduanko.com, port: 36098, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "ZDc2YTMxZTgwMGFmNjhlMg==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇯🇵 IEPL-日本2, server: junp.kuaileiduanko.com, port: 36125, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇯🇵 IEPL-日本3, server: junp.kuaileiduanko.com, port: 36126, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇯🇵 IEPL-日本4, server: junp.kuaileiduanko.com, port: 36078, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇸🇬 IEPL-新加坡1, server: junp.kuaileiduanko.com, port: 36088, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "ZDc2YTMxZTgwMGFmNjhlMg==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇸🇬 IEPL-新加坡2, server: junp.kuaileiduanko.com, port: 36075, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇸🇬 IEPL-新加坡3, server: junp.kuaileiduanko.com, port: 36073, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇸🇬 IEPL-新加坡4, server: junp.kuaileiduanko.com, port: 36450, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "NjgxY2FhMzYwOTRhZjA4NQ==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇺🇸 IEPL-美国1, server: junp.kuaileiduanko.com, port: 36072, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇺🇸 IEPL-美国2, server: junp.kuaileiduanko.com, port: 36071, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇺🇸 IEPL-美国3, server: 6688.rkkuailei.cc, port: 36070, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇺🇸 IEPL-美国4, server: junp.kuaileiduanko.com, port: 36069, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "NjgxY2FhMzYwOTRhZjA4NQ==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇺🇸 IEPL-美国静态家宽, server: junp.kuaileiduanko.com, port: 36165, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇹🇼 IEPL-台湾1, server: junp.kuaileiduanko.com, port: 36064, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇹🇼 IEPL-台湾2, server: 6688.rkkuailei.cc, port: 36063, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇹🇼 IEPL-台湾动态家宽, server: junp.kuaileiduanko.com, port: 36163, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇦🇺 IEPL-澳大利亚, server: junp.kuaileiduanko.com, port: 36097, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "YmExMzViMzFhOTY3OTEwYw==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇲🇾 IEPL-马来西亚1, server: junp.kuaileiduanko.com, port: 36066, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇲🇾 IEPL-马来西亚2, server: 6688.rkkuailei.cc, port: 36065, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇻🇳 IEPL-越南, server: junp.kuaileiduanko.com, port: 36096, type: ss, cipher: 2022-blake3-aes-128-gcm, password: "YmExMzViMzFhOTY3OTEwYw==:YmQ4ZDM3MmYtMDg2NS00Yw==", udp: true}
+  - {name: 🇰🇷 IEPL-韩国静态家宽, server: junp.kuaileiduanko.com, port: 36062, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇹🇭 IEPL-泰国, server: junp.kuaileiduanko.com, port: 36061, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇩🇪 IEPL-德国, server: junp.kuaileiduanko.com, port: 36060, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇬🇧 IEPL-英国, server: junp.kuaileiduanko.com, port: 36059, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇬🇧 IEPL-英国静态家宽, server: junp.kuaileiduanko.com, port: 36122, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇨🇭 IEPL-瑞士, server: junp.kuaileiduanko.com, port: 36058, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇳🇱 IEPL-荷兰, server: junp.kuaileiduanko.com, port: 36057, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇮🇱 IEPL-以色列, server: junp.kuaileiduanko.com, port: 36056, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇦🇪 IEPL-阿联酋, server: junp.kuaileiduanko.com, port: 36055, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇮🇳 IEPL-印度, server: junp.kuaileiduanko.com, port: 36067, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇧🇷 IEPL-巴西, server: junp.kuaileiduanko.com, port: 36054, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇪🇸 IEPL-西班牙, server: junp.kuaileiduanko.com, port: 36053, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇮🇩 IEPL-印度尼西亚, server: junp.kuaileiduanko.com, port: 36051, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+  - {name: 🇨🇦 IEPL-加拿大, server: junp.kuaileiduanko.com, port: 36050, type: ss, cipher: aes-128-gcm, password: "bd8d372f-0865-4c92-9bd1-94220898c525", udp: true}
+
+# ================= 策略组 =================
+proxy-groups:
+  # 1. 🚀 默认代理入口 (全手动选择，包含所有节点和自动组)
+  - name: 🚀 默认代理(手动选择)
+    type: select
+    proxies:
+      - 🇭🇰 IEPL-香港1
+      - 🇭🇰 IEPL-香港2
+      - 🇭🇰 IEPL-香港3
+      - 🇭🇰 IEPL-香港动态家宽
+      - 🇯🇵 IEPL-日本1
+      - 🇯🇵 IEPL-日本2
+      - 🇯🇵 IEPL-日本3
+      - 🇯🇵 IEPL-日本4
+      - 🇸🇬 IEPL-新加坡1
+      - 🇸🇬 IEPL-新加坡2
+      - 🇸🇬 IEPL-新加坡3
+      - 🇸🇬 IEPL-新加坡4
+      - 🇺🇸 IEPL-美国1
+      - 🇺🇸 IEPL-美国2
+      - 🇺🇸 IEPL-美国3
+      - 🇺🇸 IEPL-美国4
+      - 🇺🇸 IEPL-美国静态家宽
+      - 🇹🇼 IEPL-台湾1
+      - 🇹🇼 IEPL-台湾2
+      - 🇹🇼 IEPL-台湾动态家宽
+      - 🇦🇺 IEPL-澳大利亚
+      - 🇲🇾 IEPL-马来西亚1
+      - 🇲🇾 IEPL-马来西亚2
+      - 🇻🇳 IEPL-越南
+      - 🇰🇷 IEPL-韩国静态家宽
+      - 🇹🇭 IEPL-泰国
+      - 🇩🇪 IEPL-德国
+      - 🇬🇧 IEPL-英国
+      - 🇬🇧 IEPL-英国静态家宽
+      - 🇨🇭 IEPL-瑞士
+      - 🇳🇱 IEPL-荷兰
+      - 🇮🇱 IEPL-以色列
+      - 🇦🇪 IEPL-阿联酋
+      - 🇮🇳 IEPL-印度
+      - 🇧🇷 IEPL-巴西
+      - 🇪🇸 IEPL-西班牙
+      - 🇮🇩 IEPL-印度尼西亚
+      - 🇨🇦 IEPL-加拿大
+      - ⚡ 香港-自动测速
+      - ⚡ 日本-自动测速
+      - ⚡ 新加坡-自动测速
+      - ⚡ 美国-自动测速
+      - ⚡ 台湾-自动测速
+      - DIRECT
+
+  # 2. ⚡ 地区自动测速组 (url-test)
+  - name: ⚡ 香港-自动测速
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇭🇰 IEPL-香港1
+      - 🇭🇰 IEPL-香港2
+      - 🇭🇰 IEPL-香港3
+      - 🇭🇰 IEPL-香港动态家宽
+
+  - name: ⚡ 日本-自动测速
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇯🇵 IEPL-日本1
+      - 🇯🇵 IEPL-日本2
+      - 🇯🇵 IEPL-日本3
+      - 🇯🇵 IEPL-日本4
+
+  - name: ⚡ 新加坡-自动测速
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇸🇬 IEPL-新加坡1
+      - 🇸🇬 IEPL-新加坡2
+      - 🇸🇬 IEPL-新加坡3
+      - 🇸🇬 IEPL-新加坡4
+
+  - name: ⚡ 美国-自动测速
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇺🇸 IEPL-美国1
+      - 🇺🇸 IEPL-美国2
+      - 🇺🇸 IEPL-美国3
+      - 🇺🇸 IEPL-美国4
+      - 🇺🇸 IEPL-美国静态家宽
+
+  - name: ⚡ 台湾-自动测速
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇹🇼 IEPL-台湾1
+      - 🇹🇼 IEPL-台湾2
+      - 🇹🇼 IEPL-台湾动态家宽
+
+# ================= 优化规则 =================
+rules:
+  # 基础排除
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  
+  # 苹果服务直连
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+
+  # 国内流量自动直连
+  - GEOIP,CN,DIRECT
+  
+  # 最终匹配：全部交给顶层的手动选择组
+  - MATCH,🚀 默认代理(手动选择)
